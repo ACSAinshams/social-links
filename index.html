@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>ACS Student Chapter</title>
 
     <style>
@@ -20,8 +19,8 @@
         body {
             min-height: 100vh;
             font-family: Arial, Helvetica, sans-serif;
-            position: relative;
             overflow-x: hidden;
+            position: relative;
         }
 
         /* ================= BACKGROUND ================= */
@@ -30,13 +29,13 @@
             content: "";
             position: fixed;
             inset: -20px;
-            background-image: url("back.jpeg");
+            background-image: url("back.png");
             background-position: center;
             background-size: cover;
             background-repeat: no-repeat;
-            filter: blur(15px);
+            filter: blur(5px);
             transform: scale(1.06);
-            opacity: 0.20;
+            opacity: 1;
             z-index: -2;
         }
 
@@ -44,7 +43,7 @@
             content: "";
             position: fixed;
             inset: 0;
-            background: rgba(255, 255, 255, 0.72);
+            background: rgba(255, 255, 255, 0.08);
             z-index: -1;
         }
 
@@ -54,179 +53,171 @@
             width: 100%;
             max-width: 500px;
             min-height: 100vh;
-            margin: auto;
+            margin: 0 auto;
             padding: 45px 22px 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             text-align: center;
         }
 
         /* ================= LOGO ================= */
 
-        .hero-image {
+        .logo {
             width: 180px;
             height: 180px;
             object-fit: cover;
             border-radius: 50%;
             border: 6px solid white;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
-            margin-bottom: 22px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+            margin-bottom: 25px;
         }
 
         /* ================= TITLE ================= */
 
-        h1 {
-            font-size: 28px;
-            color: #123b68;
+        .title {
+            font-size: 30px;
+            font-weight: 700;
+            color: #111827;
             margin-bottom: 8px;
-            font-weight: 800;
         }
 
         .subtitle {
-            font-size: 15px;
-            color: #555;
-            margin-bottom: 32px;
-            line-height: 1.5;
-        }
-
-        /* ================= PAGES ================= */
-
-        #socialPage {
-            display: none;
+            font-size: 16px;
+            color: #374151;
+            margin-bottom: 35px;
         }
 
         /* ================= BUTTONS ================= */
 
         .buttons {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 17px 20px;
+            border-radius: 14px;
+            text-decoration: none;
+            font-size: 17px;
+            font-weight: 600;
+            color: white;
+            cursor: pointer;
+            border: none;
+            transition: all 0.25s ease;
+            box-shadow: 0 7px 18px rgba(0, 0, 0, 0.18);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 22px rgba(0, 0, 0, 0.22);
+        }
+
+        .social-btn {
+            background: #111827;
+        }
+
+        .social-btn:hover {
+            background: #1f2937;
+        }
+
+        /* ================= SOCIAL PAGE ================= */
+
+        #socialPage {
+            display: none;
+            width: 100%;
+        }
+
+        .social-title {
+            font-size: 28px;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 10px;
+        }
+
+        .social-subtitle {
+            font-size: 15px;
+            color: #374151;
+            margin-bottom: 30px;
+        }
+
+        .social-links {
+            width: 100%;
             display: flex;
             flex-direction: column;
             gap: 15px;
         }
 
-        .btn {
+        .social-link {
             width: 100%;
-            min-height: 60px;
-            border: none;
-            border-radius: 16px;
-            color: white;
+            padding: 16px 20px;
+            border-radius: 14px;
             text-decoration: none;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
+            color: white;
             font-size: 17px;
-            font-weight: 700;
-            cursor: pointer;
-            box-shadow: 0 7px 18px rgba(0, 0, 0, 0.15);
+            font-weight: 600;
             transition: all 0.25s ease;
+            box-shadow: 0 7px 18px rgba(0, 0, 0, 0.18);
         }
 
-        .btn:hover {
+        .social-link:hover {
             transform: translateY(-3px);
-            box-shadow: 0 11px 24px rgba(0, 0, 0, 0.20);
+            box-shadow: 0 10px 22px rgba(0, 0, 0, 0.22);
         }
-
-        .btn:active {
-            transform: scale(0.98);
-        }
-
-        /* Register */
-
-        .register-btn {
-            background: linear-gradient(135deg, #123b68, #1d5d94);
-        }
-
-        .register-btn:hover {
-            background: linear-gradient(135deg, #0e3156, #174d7d);
-        }
-
-        /* Social Media */
-
-        .social-main-btn {
-            background: linear-gradient(135deg, #333333, #555555);
-        }
-
-        .social-main-btn:hover {
-            background: linear-gradient(135deg, #222222, #444444);
-        }
-
-        /* ================= SOCIAL BUTTONS ================= */
-
-        .social-btn {
-            min-height: 58px;
-        }
-
-        /* Facebook */
 
         .facebook {
-            background: linear-gradient(135deg, #1877F2, #145DB2);
+            background: #1877F2;
         }
-
-        .facebook:hover {
-            background: linear-gradient(135deg, #1268D8, #104F99);
-        }
-
-        /* Instagram */
 
         .instagram {
             background: linear-gradient(
-                135deg,
-                #833AB4,
-                #C13584,
-                #E1306C,
-                #F77737
+                45deg,
+                #f09433,
+                #e6683c,
+                #dc2743,
+                #cc2366,
+                #bc1888
             );
         }
 
-        .instagram:hover {
-            filter: brightness(0.92);
-        }
-
-        /* TikTok */
-
         .tiktok {
-            background: linear-gradient(135deg, #111111, #292929);
+            background: #111111;
         }
-
-        .tiktok:hover {
-            background: linear-gradient(135deg, #000000, #1c1c1c);
-        }
-
-        /* LinkedIn */
 
         .linkedin {
-            background: linear-gradient(135deg, #0A4F7A, #0B6FA4);
+            background: #0A66C2;
         }
-
-        .linkedin:hover {
-            background: linear-gradient(135deg, #083E61, #095B87);
-        }
-
-        /* Back */
 
         .back-btn {
-            margin-top: 15px;
-            background: rgba(255, 255, 255, 0.92);
-            color: #123b68;
-            border: 2px solid #123b68;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.10);
+            margin-top: 20px;
+            width: 100%;
+            padding: 15px 20px;
+            border-radius: 14px;
+            border: none;
+            background: rgba(255, 255, 255, 0.85);
+            color: #111827;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
         }
 
         .back-btn:hover {
-            background: #123b68;
-            color: white;
-        }
-
-        /* ================= ICON ================= */
-
-        .icon {
-            font-size: 22px;
+            transform: translateY(-2px);
+            background: white;
         }
 
         /* ================= FOOTER ================= */
 
-        footer {
-            margin-top: 40px;
-            color: #666;
+        .footer {
+            margin-top: auto;
+            padding-top: 40px;
             font-size: 13px;
+            color: #374151;
         }
 
         /* ================= MOBILE ================= */
@@ -237,35 +228,22 @@
                 padding: 35px 18px 25px;
             }
 
-            .hero-image {
-                width: 155px;
-                height: 155px;
+            .logo {
+                width: 160px;
+                height: 160px;
             }
 
-            h1 {
-                font-size: 24px;
+            .title {
+                font-size: 26px;
             }
 
             .subtitle {
-                font-size: 14px;
-                margin-bottom: 27px;
+                font-size: 15px;
             }
 
-            .btn {
-                min-height: 57px;
+            .btn,
+            .social-link {
                 font-size: 16px;
-            }
-        }
-
-        @media (max-width: 360px) {
-
-            .hero-image {
-                width: 140px;
-                height: 140px;
-            }
-
-            h1 {
-                font-size: 22px;
             }
         }
     </style>
@@ -277,11 +255,13 @@
 
         <!-- ================= HOME PAGE ================= -->
 
-        <section id="homePage">
+        <div id="homePage">
 
-            <img src="acs.jpg" alt="ACS Student Chapter" class="hero-image">
+            <img src="acs.jpg" alt="ACS Student Chapter Logo" class="logo">
 
-            <h1>ACS Student Chapter</h1>
+            <h1 class="title">
+                ACS Student Chapter
+            </h1>
 
             <p class="subtitle">
                 Ain Shams University Student Chapter
@@ -293,110 +273,77 @@
                     href="https://tally.so/r/xXqXBG"
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="btn register-btn"
-                >
-                    <span class="icon">📝</span>
-                    Register
+                    class="btn social-btn">
+                    Registration Form
                 </a>
 
-                <button
-                    class="btn social-main-btn"
-                    onclick="showSocialPage()"
-                >
-                    <span class="icon">🌐</span>
+                <button class="btn social-btn" onclick="showSocialPage()">
                     Social Media
                 </button>
 
             </div>
 
-        </section>
+        </div>
 
 
         <!-- ================= SOCIAL MEDIA PAGE ================= -->
 
-        <section id="socialPage">
+        <div id="socialPage">
 
-            <img src="acs.jpg" alt="ACS Student Chapter" class="hero-image">
+            <img src="acs.jpg" alt="ACS Student Chapter Logo" class="logo">
 
-            <h1>Social Media</h1>
+            <h2 class="social-title">
+                Social Media
+            </h2>
 
-            <p class="subtitle">
+            <p class="social-subtitle">
                 Follow ACS Ain Shams University Student Chapter
             </p>
 
-            <div class="buttons">
-
-                <!-- Facebook -->
+            <div class="social-links">
 
                 <a
                     href="https://www.facebook.com/share/1WGXzNVfxr/"
                     target="_blank"
-                    rel="noopener noreferrer"
-                    class="btn social-btn facebook"
-                >
-                    <span class="icon">📘</span>
+                    class="social-link facebook">
                     Facebook
                 </a>
-
-
-                <!-- Instagram -->
 
                 <a
                     href="https://www.instagram.com/acs672019?igsi=MTZyYjF4eHJ0ZjRpYQ=="
                     target="_blank"
-                    rel="noopener noreferrer"
-                    class="btn social-btn instagram"
-                >
-                    <span class="icon">📸</span>
+                    class="social-link instagram">
                     Instagram
                 </a>
-
-
-                <!-- TikTok -->
 
                 <a
                     href="https://www.tiktok.com/@acs0775?_r=1&_t=ZS-99SIyQQvjaH"
                     target="_blank"
-                    rel="noopener noreferrer"
-                    class="btn social-btn tiktok"
-                >
-                    <span class="icon">🎵</span>
+                    class="social-link tiktok">
                     TikTok
                 </a>
-
-
-                <!-- LinkedIn -->
 
                 <a
                     href="https://www.linkedin.com/company/acschapter/"
                     target="_blank"
-                    rel="noopener noreferrer"
-                    class="btn social-btn linkedin"
-                >
-                    <span class="icon">💼</span>
+                    class="social-link linkedin">
                     LinkedIn
                 </a>
 
-
-                <!-- Back -->
-
-                <button
-                    class="btn back-btn"
-                    onclick="showHomePage()"
-                >
-                    ← Back
-                </button>
-
             </div>
 
-        </section>
+            <button class="back-btn" onclick="showHomePage()">
+                ← Back
+            </button>
+
+        </div>
 
 
         <!-- ================= FOOTER ================= -->
 
-        <footer>
+        <div class="footer">
             © 2026 ACS Student Chapter
-        </footer>
+        </div>
 
     </div>
 
@@ -406,7 +353,6 @@
     <script>
 
         function showSocialPage() {
-
             document.getElementById("homePage").style.display = "none";
             document.getElementById("socialPage").style.display = "block";
 
@@ -418,7 +364,6 @@
 
 
         function showHomePage() {
-
             document.getElementById("socialPage").style.display = "none";
             document.getElementById("homePage").style.display = "block";
 
