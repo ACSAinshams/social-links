@@ -124,91 +124,83 @@
             background: #1f2937;
         }
 
-        /* ================= SOCIAL PAGE ================= */
+        /* ================= SOCIAL DROPDOWN ================= */
 
-        #socialPage {
+        .social-dropdown {
+            width: 100%;
             display: none;
-            width: 100%;
-        }
-
-        .social-title {
-            font-size: 28px;
-            font-weight: 700;
-            color: #111827;
-            margin-bottom: 10px;
-        }
-
-        .social-subtitle {
-            font-size: 15px;
-            color: #374151;
-            margin-bottom: 30px;
-        }
-
-        .social-links {
-            width: 100%;
-            display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 10px;
+            margin-top: -6px;
+            animation: slideDown 0.3s ease;
         }
 
-        .social-link {
+        .social-dropdown.show {
+            display: flex;
+        }
+
+        .social-item {
             width: 100%;
-            padding: 16px 20px;
-            border-radius: 14px;
+            padding: 13px 18px;
+            border-radius: 12px;
             text-decoration: none;
-            color: white;
-            font-size: 17px;
+            color: #1f2937;
+            font-size: 16px;
             font-weight: 600;
             transition: all 0.25s ease;
-            box-shadow: 0 7px 18px rgba(0, 0, 0, 0.18);
+            box-shadow: 0 5px 14px rgba(0, 0, 0, 0.10);
+            border: 1px solid rgba(255, 255, 255, 0.7);
         }
 
-        .social-link:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 22px rgba(0, 0, 0, 0.22);
+        .social-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.14);
         }
+
+        /* Soft Colors */
 
         .facebook {
-            background: #1877F2;
+            background: #dce9f7;
+        }
+
+        .facebook:hover {
+            background: #cbdff3;
         }
 
         .instagram {
-            background: linear-gradient(
-                45deg,
-                #f09433,
-                #e6683c,
-                #dc2743,
-                #cc2366,
-                #bc1888
-            );
+            background: #f0dfe8;
+        }
+
+        .instagram:hover {
+            background: #ead1df;
         }
 
         .tiktok {
-            background: #111111;
+            background: #e1e3e6;
+        }
+
+        .tiktok:hover {
+            background: #d5d8dc;
         }
 
         .linkedin {
-            background: #0A66C2;
+            background: #dcebf3;
         }
 
-        .back-btn {
-            margin-top: 20px;
-            width: 100%;
-            padding: 15px 20px;
-            border-radius: 14px;
-            border: none;
-            background: rgba(255, 255, 255, 0.85);
-            color: #111827;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.25s ease;
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+        .linkedin:hover {
+            background: #cce3ee;
         }
 
-        .back-btn:hover {
-            transform: translateY(-2px);
-            background: white;
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-8px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* ================= FOOTER ================= */
@@ -242,7 +234,7 @@
             }
 
             .btn,
-            .social-link {
+            .social-item {
                 font-size: 16px;
             }
         }
@@ -277,67 +269,51 @@
                     Registration Form
                 </a>
 
-                <button class="btn social-btn" onclick="showSocialPage()">
+                <button class="btn social-btn" onclick="toggleSocialMedia()">
                     Social Media
                 </button>
 
-            </div>
+                <!-- SOCIAL MEDIA DROPDOWN -->
 
-        </div>
+                <div id="socialDropdown" class="social-dropdown">
 
+                    <a
+                        href="https://www.facebook.com/share/1WGXzNVfxr/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="social-item facebook">
+                        Facebook
+                    </a>
 
-        <!-- ================= SOCIAL MEDIA PAGE ================= -->
+                    <a
+                        href="https://www.instagram.com/acs672019?igsi=MTZyYjF4eHJ0ZjRpYQ=="
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="social-item instagram">
+                        Instagram
+                    </a>
 
-        <div id="socialPage">
+                    <a
+                        href="https://www.tiktok.com/@acs0775?_r=1&_t=ZS-99SIyQQvjaH"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="social-item tiktok">
+                        TikTok
+                    </a>
 
-            <img src="acs.jpg" alt="ACS Student Chapter Logo" class="logo">
+                    <a
+                        href="https://www.linkedin.com/company/acschapter/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="social-item linkedin">
+                        LinkedIn
+                    </a>
 
-            <h2 class="social-title">
-                Social Media
-            </h2>
-
-            <p class="social-subtitle">
-                Follow ACS Ain Shams University Student Chapter
-            </p>
-
-            <div class="social-links">
-
-                <a
-                    href="https://www.facebook.com/share/1WGXzNVfxr/"
-                    target="_blank"
-                    class="social-link facebook">
-                    Facebook
-                </a>
-
-                <a
-                    href="https://www.instagram.com/acs672019?igsi=MTZyYjF4eHJ0ZjRpYQ=="
-                    target="_blank"
-                    class="social-link instagram">
-                    Instagram
-                </a>
-
-                <a
-                    href="https://www.tiktok.com/@acs0775?_r=1&_t=ZS-99SIyQQvjaH"
-                    target="_blank"
-                    class="social-link tiktok">
-                    TikTok
-                </a>
-
-                <a
-                    href="https://www.linkedin.com/company/acschapter/"
-                    target="_blank"
-                    class="social-link linkedin">
-                    LinkedIn
-                </a>
+                </div>
 
             </div>
 
-            <button class="back-btn" onclick="showHomePage()">
-                ← Back
-            </button>
-
         </div>
-
 
         <!-- ================= FOOTER ================= -->
 
@@ -347,30 +323,17 @@
 
     </div>
 
-
     <!-- ================= JAVASCRIPT ================= -->
 
     <script>
 
-        function showSocialPage() {
-            document.getElementById("homePage").style.display = "none";
-            document.getElementById("socialPage").style.display = "block";
+        function toggleSocialMedia() {
 
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth"
-            });
-        }
+            const socialDropdown =
+                document.getElementById("socialDropdown");
 
+            socialDropdown.classList.toggle("show");
 
-        function showHomePage() {
-            document.getElementById("socialPage").style.display = "none";
-            document.getElementById("homePage").style.display = "block";
-
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth"
-            });
         }
 
     </script>
