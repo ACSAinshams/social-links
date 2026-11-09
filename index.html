@@ -1,0 +1,858 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beyond the Form | ASU</title>
+
+<style>
+:root {
+  --bg: #17132f;
+  --cyan: #08e8f3;
+  --pink: #ed00e8;
+  --white: #f8f8ff;
+  --muted: #c0bfd6;
+  --panel: rgba(255,255,255,.06);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: Arial, sans-serif;
+  color: var(--white);
+  background:
+    radial-gradient(circle at 85% 15%, #493c85 0%, transparent 35%),
+    linear-gradient(120deg, #17132f, #302b62);
+  overflow-x: hidden;
+}
+
+a { text-decoration: none; color: inherit; }
+
+/* NAVBAR */
+
+nav {
+  max-width: 1200px;
+  margin: auto;
+  padding: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 25px;
+  font-weight: 900;
+}
+
+.logo span { color: var(--cyan); }
+
+.nav-links {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+  font-size: 14px;
+}
+
+.nav-links a:hover { color: var(--cyan); }
+
+.menu-btn {
+  display: none;
+  background: transparent;
+  color: white;
+  border: 1px solid #ffffff44;
+  padding: 9px 12px;
+  border-radius: 8px;
+  font-size: 20px;
+}
+
+/* BUTTONS */
+
+.btn {
+  display: inline-block;
+  padding: 13px 22px;
+  border-radius: 7px;
+  font-size: 13px;
+  font-weight: bold;
+  transition: .3s;
+}
+
+.btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 20px #08e8f355;
+}
+
+.primary {
+  background: var(--cyan);
+  color: #15132c;
+}
+
+.secondary {
+  border: 1px solid var(--pink);
+  color: #ff75f5;
+}
+
+/* HERO */
+
+.hero {
+  text-align: center;
+  padding: 100px 20px 70px;
+  position: relative;
+}
+
+.eyebrow {
+  display: inline-block;
+  padding: 9px 17px;
+  border: 1px solid #08e8f355;
+  border-radius: 30px;
+  color: var(--cyan);
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+h1 {
+  font-size: clamp(40px, 7vw, 78px);
+  font-weight: 900;
+  line-height: 1.05;
+  margin: 30px 0 20px;
+}
+
+.gradient {
+  background: linear-gradient(90deg, white, var(--cyan), #f35af0);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.hero p {
+  max-width: 750px;
+  margin: auto;
+  color: var(--muted);
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.hero-buttons {
+  margin: 30px 0;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.meta {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+  color: #b5b2cd;
+  font-size: 12px;
+  margin-top: 25px;
+}
+
+/* SECTIONS */
+
+.section {
+  max-width: 1100px;
+  margin: auto;
+  padding: 85px 25px 20px;
+  text-align: center;
+}
+
+.section h2 {
+  font-size: clamp(30px, 4vw, 43px);
+  margin-bottom: 15px;
+}
+
+.subtitle {
+  color: var(--muted);
+  max-width: 700px;
+  margin: 0 auto 40px;
+  line-height: 1.7;
+}
+
+/* CARDS */
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.card {
+  background: var(--panel);
+  border: 1px solid #ffffff20;
+  padding: 28px;
+  border-radius: 14px;
+  text-align: left;
+  transition: .35s;
+  backdrop-filter: blur(12px);
+}
+
+.card:hover {
+  transform: translateY(-9px);
+  border-color: var(--cyan);
+  box-shadow: 0 10px 35px #08e8f322;
+}
+
+.card .icon {
+  font-size: 30px;
+  margin-bottom: 20px;
+  color: var(--cyan);
+}
+
+.card h3 {
+  margin-bottom: 12px;
+  font-size: 17px;
+}
+
+.card p {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+/* EVENT DETAILS */
+
+.details {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.detail {
+  padding: 23px;
+  background: var(--panel);
+  border: 1px solid #ffffff20;
+  border-radius: 12px;
+}
+
+.detail small {
+  display: block;
+  color: var(--cyan);
+  margin-bottom: 12px;
+  letter-spacing: 1px;
+}
+
+.detail strong { font-size: 14px; }
+
+/* AGENDA */
+
+.agenda {
+  max-width: 800px;
+  margin: auto;
+  text-align: left;
+}
+
+.agenda-item {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  margin-bottom: 13px;
+  border: 1px solid #ffffff20;
+  background: var(--panel);
+  border-radius: 12px;
+  transition: .3s;
+}
+
+.agenda-item:hover {
+  border-color: var(--cyan);
+  transform: translateX(5px);
+}
+
+.number {
+  color: var(--cyan);
+  font-size: 22px;
+  font-weight: 900;
+}
+
+.agenda-item h3 { margin-bottom: 8px; }
+
+.agenda-item p {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* OUTCOMES */
+
+.outcomes {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  max-width: 850px;
+  margin: auto;
+}
+
+.outcome {
+  padding: 19px;
+  background: var(--panel);
+  border: 1px solid #ffffff20;
+  border-radius: 10px;
+  text-align: left;
+  font-size: 14px;
+}
+
+.outcome span {
+  color: var(--cyan);
+  margin-right: 10px;
+}
+
+/* SPEAKER */
+
+.speaker {
+  max-width: 850px;
+  margin: 85px auto;
+  padding: 0 25px;
+}
+
+.speaker-card {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  padding: 35px;
+  border: 1px solid #ffffff25;
+  border-radius: 18px;
+  background: var(--panel);
+  backdrop-filter: blur(15px);
+  transition: .3s;
+}
+
+.speaker-card:hover {
+  border-color: var(--cyan);
+  box-shadow: 0 0 35px #08e8f322;
+}
+
+.speaker-photo {
+  width: 160px;
+  height: 160px;
+  flex-shrink: 0;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+  padding: 4px;
+  border: 3px solid #f2c94c;
+  box-shadow: 0 0 25px #08e8f344;
+  transition: .4s;
+}
+
+.speaker-card:hover .speaker-photo {
+  transform: scale(1.05);
+}
+
+.speaker-info h2 {
+  font-size: 29px;
+  margin: 12px 0;
+}
+
+.speaker-info p {
+  color: var(--muted);
+  line-height: 1.7;
+  font-size: 14px;
+}
+
+.speaker-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+/* FAQ */
+
+.faq {
+  max-width: 800px;
+  margin: auto;
+  text-align: left;
+}
+
+.faq details {
+  padding: 20px;
+  margin-bottom: 12px;
+  border: 1px solid #ffffff20;
+  border-radius: 10px;
+  background: var(--panel);
+}
+
+.faq summary {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.faq details p {
+  color: var(--muted);
+  line-height: 1.7;
+  font-size: 13px;
+  margin-top: 15px;
+}
+
+/* REGISTER */
+
+.register {
+  max-width: 760px;
+  margin: 90px auto;
+  padding: 45px 25px;
+  text-align: center;
+  border: 1px solid #ffffff25;
+  background: var(--panel);
+  border-radius: 17px;
+}
+
+.register p {
+  color: var(--muted);
+  line-height: 1.8;
+  margin: 18px auto;
+}
+
+/* FOOTER */
+
+footer {
+  text-align: center;
+  padding: 30px 15px;
+  color: var(--muted);
+  border-top: 1px solid #ffffff20;
+  font-size: 12px;
+  line-height: 2;
+}
+
+/* ANIMATIONS */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity .8s, transform .8s;
+}
+
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 10px #08e8f322; }
+  50% { box-shadow: 0 0 30px #ed00e844; }
+}
+
+.eyebrow { animation: glow 3s infinite; }
+
+@media(max-width:750px) {
+  .menu-btn { display: block; }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 15px;
+    right: 15px;
+    background: #211d43;
+    padding: 20px;
+    border-radius: 12px;
+    flex-direction: column;
+    z-index: 10;
+  }
+
+  .nav-links.open { display: flex; }
+
+  .cards, .details, .outcomes {
+    grid-template-columns: 1fr;
+  }
+
+  .speaker-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .speaker-links { justify-content: center; }
+
+  .hero { padding-top: 70px; }
+}
+
+@media(prefers-reduced-motion:reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal { opacity: 1; transform: none; }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <a href="#" class="logo">SFE<span>.</span></a>
+
+  <button class="menu-btn"
+    onclick="document.querySelector('.nav-links').classList.toggle('open')">
+    ☰
+  </button>
+
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#agenda">Agenda</a>
+    <a href="#speaker">Speaker</a>
+    <a href="#faq">FAQ</a>
+    <a href="https://tally.so/" target="_blank">Tally ↗</a>
+    <a href="https://github.com/" target="_blank">GitHub ↗</a>
+    <a href="#register" class="btn primary">Register Now</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="eyebrow reveal">
+    SCIENTIFIC COMMITTEE · AIN SHAMS UNIVERSITY
+  </div>
+
+  <h1 class="reveal">
+    BEYOND THE FORM.<br>
+    <span class="gradient">BUILD THE EXPERIENCE.</span>
+  </h1>
+
+  <p class="reveal">
+    Learn how to create professional registration forms
+    using Tally and build modern landing pages using
+    GitHub Pages.
+  </p>
+
+  <div class="hero-buttons reveal">
+    <a href="#register" class="btn primary">Explore the Session ↓</a>
+    <a href="https://github.com/" target="_blank"
+       class="btn secondary">Explore GitHub ↗</a>
+  </div>
+
+  <div class="meta reveal">
+    <span>◷ Date: To Be Announced</span>
+    <span>⌖ Ain Shams University</span>
+    <span>◉ ASU Students</span>
+  </div>
+</header>
+
+<section class="section" id="about">
+
+  <h2 class="reveal">
+    A Practical <span class="gradient">Digital Workshop</span>
+  </h2>
+
+  <p class="subtitle reveal">
+    Discover how forms and landing pages work together
+    to create a professional event registration experience.
+  </p>
+
+  <div class="cards">
+
+    <div class="card reveal">
+      <div class="icon">▤</div>
+      <h3>Smart Registration Forms</h3>
+      <p>
+        Create organized forms using Tally with different
+        question types and required fields.
+      </p>
+      <br>
+      <a href="https://tally.so/" target="_blank"
+         class="btn secondary">Visit Tally ↗</a>
+    </div>
+
+    <div class="card reveal">
+      <div class="icon">⌘</div>
+      <h3>Modern Landing Pages</h3>
+      <p>
+        Understand landing page structure and create
+        attractive websites for events and activities.
+      </p>
+    </div>
+
+    <div class="card reveal">
+      <div class="icon">⌁</div>
+      <h3>Publish with GitHub</h3>
+      <p>
+        Upload your website files and publish your
+        landing page using GitHub Pages.
+      </p>
+      <br>
+      <a href="https://github.com/" target="_blank"
+         class="btn secondary">Visit GitHub ↗</a>
+    </div>
+
+  </div>
+
+  <div class="details reveal">
+
+    <div class="detail">
+      <small>SESSION DATE</small>
+      <strong>To Be Announced</strong>
+    </div>
+
+    <div class="detail">
+      <small>TIME & DURATION</small>
+      <strong>To Be Announced</strong>
+    </div>
+
+    <div class="detail">
+      <small>LOCATION</small>
+      <strong>Ain Shams University</strong>
+    </div>
+
+  </div>
+</section>
+
+<section class="section" id="agenda">
+
+  <h2 class="reveal">
+    Inside the <span class="gradient">Session</span>
+  </h2>
+
+  <p class="subtitle reveal">
+    A step-by-step journey from creating a form
+    to publishing your own landing page.
+  </p>
+
+  <div class="agenda">
+
+    <div class="agenda-item reveal">
+      <div class="number">01</div>
+      <div>
+        <h3>Registration Experience</h3>
+        <p>Understand how to organize registration data and questions.</p>
+      </div>
+    </div>
+
+    <div class="agenda-item reveal">
+      <div class="number">02</div>
+      <div>
+        <h3>Building Forms with Tally</h3>
+        <p>Create questions, customize fields and manage responses.</p>
+      </div>
+    </div>
+
+    <div class="agenda-item reveal">
+      <div class="number">03</div>
+      <div>
+        <h3>Landing Page Design</h3>
+        <p>Explore website sections, layouts and registration buttons.</p>
+      </div>
+    </div>
+
+    <div class="agenda-item reveal">
+      <div class="number">04</div>
+      <div>
+        <h3>GitHub Pages</h3>
+        <p>Upload your files and publish your website online.</p>
+      </div>
+    </div>
+
+    <div class="agenda-item reveal">
+      <div class="number">05</div>
+      <div>
+        <h3>Connecting Everything</h3>
+        <p>Connect Tally with your landing page and test registration.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="section" id="outcomes">
+
+  <h2 class="reveal">
+    What You'll <span class="gradient">Learn</span>
+  </h2>
+
+  <p class="subtitle reveal">
+    Practical skills you can use in your next event or activity.
+  </p>
+
+  <div class="outcomes">
+
+    <div class="outcome reveal">
+      <span>✓</span> Build a registration form using Tally
+    </div>
+
+    <div class="outcome reveal">
+      <span>✓</span> Customize questions and required fields
+    </div>
+
+    <div class="outcome reveal">
+      <span>✓</span> Understand landing page structure
+    </div>
+
+    <div class="outcome reveal">
+      <span>✓</span> Publish a website using GitHub Pages
+    </div>
+
+    <div class="outcome reveal">
+      <span>✓</span> Connect forms with websites
+    </div>
+
+    <div class="outcome reveal">
+      <span>✓</span> Create a complete registration experience
+    </div>
+
+  </div>
+</section>
+
+<!-- SPEAKER SECTION -->
+
+<section class="speaker" id="speaker">
+
+  <div class="speaker-card reveal">
+
+    <!-- IMPORTANT: Image file name is speaker.jpg -->
+    <img
+      src="assets/speaker.jpg"
+      alt="Mo'men Khaled"
+      class="speaker-photo"
+    >
+
+    <div class="speaker-info">
+
+      <div class="eyebrow">MEET YOUR SPEAKER</div>
+
+      <h2>Mo’men Khaled</h2>
+
+      <p>
+        Session Speaker<br>
+        Registration Forms & Landing Page Development
+      </p>
+
+      <p style="margin-top:12px">
+        TALLY · GITHUB PAGES · WEB EXPERIENCE
+      </p>
+
+      <div class="speaker-links">
+
+        <a href="https://tally.so/"
+           target="_blank"
+           class="btn secondary">
+          Visit Tally ↗
+        </a>
+
+        <a href="https://github.com/"
+           target="_blank"
+           class="btn secondary">
+          Visit GitHub ↗
+        </a>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section" id="faq">
+
+  <h2 class="reveal">
+    Frequently Asked <span class="gradient">Questions</span>
+  </h2>
+
+  <div class="faq reveal">
+
+    <details>
+      <summary>Do I need coding experience?</summary>
+      <p>
+        No advanced coding experience is required.
+        The session will introduce the process step by step.
+      </p>
+    </details>
+
+    <details>
+      <summary>Will we use Google Forms?</summary>
+      <p>
+        No. The session focuses on Tally as an alternative
+        for creating professional registration forms.
+      </p>
+    </details>
+
+    <details>
+      <summary>Is GitHub Pages free?</summary>
+      <p>
+        GitHub Pages offers free hosting for supported
+        static websites.
+      </p>
+    </details>
+
+    <details>
+      <summary>Who can attend?</summary>
+      <p>
+        Students of Ain Shams University interested
+        in registration systems and website building.
+      </p>
+    </details>
+
+    <details>
+      <summary>When is the session?</summary>
+      <p>
+        The confirmed date and time will be announced
+        by the organizers.
+      </p>
+    </details>
+
+  </div>
+</section>
+
+<section class="register" id="register">
+
+  <div class="eyebrow">YOUR NEXT STEP STARTS HERE</div>
+
+  <h2 style="margin-top:22px">
+    Ready to Build <span class="gradient">Something Better?</span>
+  </h2>
+
+  <p>
+    Join us to learn how to turn a simple registration form
+    into a complete digital experience.
+    Registration details will be announced soon.
+  </p>
+
+  <a href="https://tally.so/"
+     target="_blank"
+     class="btn primary">
+    Explore Tally ↗
+  </a>
+
+</section>
+
+<footer>
+  Scientific Committee<br>
+  Students for Egypt · Ain Shams University
+  <br>
+  Registration Forms & Landing Page Development
+</footer>
+
+<script>
+/* Scroll reveal animation */
+
+const observer = new IntersectionObserver(
+  entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+        observer.unobserve(entry.target);
+      }
+    });
+  },
+  { threshold: 0.12 }
+);
+
+document.querySelectorAll(".reveal").forEach((element, index) => {
+  element.style.transitionDelay = (index % 3) * 80 + "ms";
+  observer.observe(element);
+});
+
+/* Mobile navigation */
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+  link.addEventListener("click", () => {
+    document.querySelector(".nav-links").classList.remove("open");
+  });
+});
+</script>
+
+</body>
+</html>
