@@ -4,12 +4,19 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#17132f">
-<title>Beyond the Form | SFE · Ain Shams University</title>
+
+<title>Beyond the Form | SFE - Ain Shams University</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
+
+/* =========================
+   GLOBAL SETTINGS
+========================= */
+
 :root {
   --bg:#17132f;
   --bg2:#211a43;
@@ -27,7 +34,10 @@
   box-sizing:border-box;
 }
 
-html { scroll-behavior:smooth; }
+html {
+  scroll-behavior:smooth;
+  scroll-padding-top:85px;
+}
 
 body {
   font-family:Inter,sans-serif;
@@ -54,7 +64,10 @@ a {
   color:transparent;
 }
 
-/* NAVBAR */
+
+/* =========================
+   NAVIGATION BAR
+========================= */
 
 header {
   position:sticky;
@@ -74,115 +87,31 @@ header {
 }
 
 .logo {
-  font-size:30px;
+  font-size:32px;
   font-weight:900;
-  letter-spacing:-1.5px;
+  letter-spacing:-1.8px;
+  white-space:nowrap;
 }
 
-.logo span { color:var(--cyan); }
+.logo span {
+  color:var(--cyan);
+}
 
 .nav-links {
   display:flex;
-  gap:25px;
-  font-size:13px;
+  align-items:center;
+  gap:27px;
+  font-size:14px;
   color:var(--muted);
 }
 
-.nav-links a:hover { color:var(--cyan); }
-
-/* BUTTONS */
-
-.btn {
-  display:inline-block;
-  padding:14px 24px;
-  border-radius:9px;
-  font-size:13px;
-  font-weight:800;
+.nav-links a {
   transition:.3s;
 }
 
-.btn-primary {
-  color:#15132c;
-  background:var(--cyan);
-}
-
-.btn-secondary {
-  border:1px solid var(--border);
-  background:var(--panel);
-}
-
-.btn:hover {
-  transform:translateY(-4px);
-  box-shadow:0 8px 25px #08e8f344;
-}
-
-/* HERO */
-
-.hero {
-  min-height:660px;
-  display:flex;
-  align-items:center;
-  padding:90px 0;
-  background:
-    radial-gradient(circle at 85% 20%,#493c854d,transparent 35%),
-    radial-gradient(circle at 10% 80%,#08e8f31a,transparent 30%);
-}
-
-.eyebrow {
-  display:inline-block;
+.nav-links a:hover {
   color:var(--cyan);
-  border:1px solid #08e8f355;
-  background:#08e8f30d;
-  border-radius:30px;
-  padding:8px 16px;
-  font-size:11px;
-  font-weight:700;
-  letter-spacing:2px;
-  margin-bottom:25px;
 }
-
-.hero h1 {
-  font-size:clamp(48px,8vw,88px);
-  line-height:1.05;
-  font-weight:900;
-  letter-spacing:-3px;
-  margin-bottom:25px;
-}
-
-.hero p {
-  max-width:650px;
-  color:var(--muted);
-  font-size:16px;
-  line-height:1.9;
-}
-
-.hero-buttons {
-  display:flex;
-  flex-wrap:wrap;
-  gap:15px;
-  margin-top:30px;
-}
-
-.stats {
-  display:flex;
-  flex-wrap:wrap;
-  gap:40px;
-  margin-top:55px;
-}
-
-.stats strong {
-  display:block;
-  font-size:16px;
-}
-
-.stats small {
-  color:var(--muted);
-  font-size:11px;
-}
-
-/* HERO DESIGN */
-
-.nav { gap:24px; }
 
 .nav-actions {
   display:flex;
@@ -191,12 +120,17 @@ header {
 }
 
 .nav-cta {
-  padding:10px 20px;
+  padding:11px 20px;
   border:1px solid var(--pink);
   border-radius:9px;
   color:#f34be9;
   font-size:13px;
   font-weight:700;
+  transition:.3s;
+}
+
+.nav-cta:hover {
+  background:rgba(237,0,232,.1);
 }
 
 .nav-register {
@@ -215,25 +149,84 @@ header {
   box-shadow:0 8px 25px #08e8f344;
 }
 
+
+/* =========================
+   BUTTONS
+========================= */
+
+.btn {
+  display:inline-block;
+  padding:14px 24px;
+  border-radius:9px;
+  font-size:13px;
+  font-weight:800;
+  transition:.3s;
+  cursor:pointer;
+}
+
+.btn-primary {
+  color:#15132c;
+  background:var(--cyan);
+}
+
+.btn-primary:hover {
+  transform:translateY(-4px);
+  box-shadow:0 8px 25px #08e8f344;
+}
+
+.btn-outline-pink {
+  border:1px solid var(--pink);
+  color:#f34be9;
+  background:rgba(23,19,47,.35);
+}
+
+.btn-outline-pink:hover {
+  background:rgba(237,0,232,.1);
+  transform:translateY(-4px);
+}
+
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero {
+  min-height:660px;
+  display:flex;
+  align-items:center;
+  padding:90px 0;
+  background:
+    radial-gradient(circle at 85% 20%,#493c854d,transparent 35%),
+    radial-gradient(circle at 10% 80%,#08e8f31a,transparent 30%);
+}
+
 .hero-modern {
   min-height:calc(100vh - 75px);
   padding:70px 0 45px;
   text-align:center;
   justify-content:center;
+
   background:
     radial-gradient(ellipse at 15% 42%,rgba(237,0,232,.16),transparent 38%),
     radial-gradient(ellipse at 88% 48%,rgba(8,232,243,.15),transparent 40%),
     linear-gradient(115deg,#17132f 0%,#211a43 55%,#30265d 100%);
 }
 
-.hero-content { width:min(1120px,90%); }
+.hero-content {
+  width:min(1120px,90%);
+}
 
-.hero-modern .eyebrow {
-  margin-bottom:34px;
+.eyebrow {
+  display:inline-block;
+  color:var(--cyan);
+  border:1px solid #08e8f355;
+  background:#08e8f30d;
+  border-radius:30px;
   padding:9px 18px;
-  border-color:#08e8f355;
-  color:#a8f6ff;
+  font-size:11px;
+  font-weight:700;
   letter-spacing:1.4px;
+  margin-bottom:34px;
 }
 
 .eyebrow-dot {
@@ -255,7 +248,7 @@ header {
   font-weight:900;
 }
 
-.hero-modern .gradient {
+.hero-modern h1 .gradient {
   background:linear-gradient(95deg,#d8ffff 0%,#82efff 38%,#e85be9 100%);
   -webkit-background-clip:text;
   background-clip:text;
@@ -270,15 +263,12 @@ header {
   line-height:1.75;
 }
 
-.hero-modern .hero-buttons {
+.hero-buttons {
+  display:flex;
+  flex-wrap:wrap;
   justify-content:center;
+  gap:15px;
   margin-top:30px;
-}
-
-.btn-outline-pink {
-  border:1px solid var(--pink);
-  color:#f34be9;
-  background:rgba(23,19,47,.35);
 }
 
 .hero-meta {
@@ -290,6 +280,11 @@ header {
   color:#b8b3d0;
   font-size:12px;
 }
+
+
+/* =========================
+   HERO FEATURE CARDS
+========================= */
 
 .hero-feature-grid {
   display:grid;
@@ -323,9 +318,17 @@ header {
   text-shadow:0 0 20px currentColor;
 }
 
-.pink-icon { color:#ed00e8; }
-.cyan-icon { color:#08e8f3; }
-.purple-icon { color:#b66aff; }
+.pink-icon {
+  color:#ed00e8;
+}
+
+.cyan-icon {
+  color:#08e8f3;
+}
+
+.purple-icon {
+  color:#b66aff;
+}
 
 .hero-feature-card h3 {
   margin-bottom:5px;
@@ -337,9 +340,132 @@ header {
   font-size:12px;
 }
 
-/* SECTIONS */
 
-section { padding:95px 0; }
+/* =========================
+   POWERFUL FEATURES SECTION
+========================= */
+
+.powerful-section {
+  padding:85px 0 95px;
+
+  background:
+    radial-gradient(ellipse at 90% 20%,rgba(110,75,190,.25),transparent 45%),
+    linear-gradient(115deg,#17132f,#30265d);
+}
+
+.powerful-header {
+  text-align:center;
+  margin-bottom:55px;
+}
+
+.powerful-header h2 {
+  font-size:clamp(34px,5vw,48px);
+  font-weight:900;
+  letter-spacing:-1.5px;
+  margin-bottom:15px;
+}
+
+.powerful-header p {
+  color:var(--muted);
+  font-size:16px;
+  line-height:1.8;
+}
+
+
+/* DATE - TIME - VENUE */
+
+.info-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
+  margin-bottom:0;
+}
+
+.info-card {
+  padding:22px 23px;
+  border:1px solid var(--border);
+  border-radius:15px;
+  background:rgba(255,255,255,.055);
+  min-height:145px;
+  transition:.3s;
+}
+
+.info-card:hover {
+  border-color:rgba(8,232,243,.4);
+}
+
+.info-card small {
+  color:#aaa6c4;
+  font-size:12px;
+  letter-spacing:1px;
+}
+
+.info-card h3 {
+  font-size:16px;
+  margin:9px 0;
+}
+
+.info-card p {
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.7;
+}
+
+
+/* SIX POWERFUL CARDS */
+
+.powerful-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:21px;
+  margin:0 -26px;
+}
+
+.powerful-card {
+  min-height:243px;
+  padding:30px;
+  border:1px solid rgba(255,255,255,.10);
+  border-radius:16px;
+  background:rgba(255,255,255,.065);
+  backdrop-filter:blur(10px);
+  transition:.3s;
+}
+
+.powerful-card:hover {
+  transform:translateY(-7px);
+  border-color:var(--pink);
+  box-shadow:0 10px 35px rgba(237,0,232,.12);
+}
+
+.powerful-icon {
+  color:var(--pink);
+  font-size:34px;
+  font-weight:800;
+  line-height:1.2;
+  margin-bottom:27px;
+  text-shadow:0 0 20px rgba(237,0,232,.65);
+}
+
+.powerful-card h3 {
+  font-size:18px;
+  font-weight:800;
+  margin-bottom:10px;
+}
+
+.powerful-card p {
+  color:var(--muted);
+  font-size:14px;
+  line-height:1.8;
+}
+
+
+/* =========================
+   GENERAL SECTIONS
+========================= */
+
+section {
+  padding:95px 0;
+}
 
 .section-label {
   color:var(--cyan);
@@ -367,7 +493,10 @@ section { padding:95px 0; }
   border-bottom:1px solid var(--border);
 }
 
-/* CARDS */
+
+/* =========================
+   ABOUT CARDS
+========================= */
 
 .cards {
   display:grid;
@@ -413,7 +542,10 @@ section { padding:95px 0; }
   margin-top:20px;
 }
 
-/* LEARNING */
+
+/* =========================
+   LEARNING OUTCOMES
+========================= */
 
 .learning {
   display:grid;
@@ -453,7 +585,10 @@ section { padding:95px 0; }
   font-size:13px;
 }
 
-/* AGENDA */
+
+/* =========================
+   AGENDA
+========================= */
 
 .agenda {
   max-width:780px;
@@ -474,7 +609,9 @@ section { padding:95px 0; }
   font-weight:900;
 }
 
-.agenda-item h3 { font-size:16px; }
+.agenda-item h3 {
+  font-size:16px;
+}
 
 .agenda-item p {
   color:var(--muted);
@@ -482,7 +619,10 @@ section { padding:95px 0; }
   margin-top:5px;
 }
 
-/* SPEAKER */
+
+/* =========================
+   SPEAKER
+========================= */
 
 .speaker-section {
   background:
@@ -513,8 +653,6 @@ section { padding:95px 0; }
   animation:rotate 12s linear infinite;
 }
 
-/* YOUR PHOTO */
-
 .speaker-photo {
   display:block;
   width:100%;
@@ -528,7 +666,9 @@ section { padding:95px 0; }
 }
 
 @keyframes rotate {
-  to { transform:rotate(360deg); }
+  to {
+    transform:rotate(360deg);
+  }
 }
 
 .speaker-info h3 {
@@ -566,7 +706,10 @@ section { padding:95px 0; }
   font-size:11px;
 }
 
-/* FAQ */
+
+/* =========================
+   FAQ
+========================= */
 
 .faq-list {
   max-width:800px;
@@ -607,13 +750,17 @@ section { padding:95px 0; }
   display:block;
 }
 
-/* CTA */
+
+/* =========================
+   REGISTRATION CTA
+========================= */
 
 .cta {
   text-align:center;
   padding:55px 25px;
   border:1px solid #08e8f344;
   border-radius:22px;
+
   background:
     radial-gradient(circle at 10% 10%,#08e8f31c,transparent 40%),
     radial-gradient(circle at 90% 90%,#ed00e81c,transparent 40%),
@@ -632,7 +779,10 @@ section { padding:95px 0; }
   font-size:14px;
 }
 
-/* FOOTER */
+
+/* =========================
+   FOOTER
+========================= */
 
 footer {
   border-top:1px solid var(--border);
@@ -658,9 +808,14 @@ footer p {
   font-size:12px;
 }
 
-.footer-links a:hover { color:var(--cyan); }
+.footer-links a:hover {
+  color:var(--cyan);
+}
 
-/* ANIMATION */
+
+/* =========================
+   SCROLL ANIMATION
+========================= */
 
 .reveal {
   opacity:0;
@@ -673,54 +828,170 @@ footer p {
   transform:translateY(0);
 }
 
-/* MOBILE */
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media(max-width:1000px) {
+
+  .nav-links {
+    gap:15px;
+  }
+
+  .powerful-grid {
+    margin:0;
+  }
+
+}
 
 @media(max-width:800px) {
-  .nav-links { display:none; }
-  .nav-actions { gap:8px; }
-  .nav-cta { display:none; }
-  .cards { grid-template-columns:1fr; }
-  .speaker-layout { grid-template-columns:1fr; text-align:center; }
-  .tags { justify-content:center; }
-  .hero-feature-grid { margin-top:55px; }
+
+  .nav-links {
+    display:none;
+  }
+
+  .nav-actions {
+    gap:8px;
+  }
+
+  .nav-cta {
+    display:none;
+  }
+
+  .cards {
+    grid-template-columns:1fr;
+  }
+
+  .speaker-layout {
+    grid-template-columns:1fr;
+    text-align:center;
+  }
+
+  .tags {
+    justify-content:center;
+  }
+
+  .hero-feature-grid {
+    margin-top:55px;
+  }
+
+  .info-grid,
+  .powerful-grid {
+    grid-template-columns:repeat(2,1fr);
+  }
+
 }
 
 @media(max-width:600px) {
-  section { padding:70px 0; }
-  .logo { font-size:27px; }
-  .nav-register { padding:10px 13px; font-size:11px; }
-  .hero-modern { min-height:auto; padding:65px 0 55px; }
-  .hero-modern h1 { letter-spacing:-1.8px; }
-  .hero-meta { gap:12px 18px; }
+
+  section {
+    padding:70px 0;
+  }
+
+  .logo {
+    font-size:27px;
+  }
+
+  .nav-register {
+    padding:10px 13px;
+    font-size:11px;
+  }
+
+  .hero-modern {
+    min-height:auto;
+    padding:65px 0 55px;
+  }
+
+  .hero-modern h1 {
+    letter-spacing:-1.8px;
+  }
+
+  .hero-meta {
+    gap:12px 18px;
+  }
+
   .hero-feature-grid {
     grid-template-columns:1fr;
     gap:12px;
     margin-top:45px;
   }
-  .hero-feature-card { min-height:130px; }
-  .learning { grid-template-columns:1fr; }
-  .speaker-image-wrap { width:220px;height:220px; }
-  .stats { gap:20px; }
-  .footer-content { justify-content:center;text-align:center; }
+
+  .hero-feature-card {
+    min-height:130px;
+  }
+
+  .powerful-section {
+    padding:65px 0;
+  }
+
+  .powerful-header {
+    margin-bottom:35px;
+  }
+
+  .powerful-header p {
+    font-size:14px;
+  }
+
+  .info-grid,
+  .powerful-grid {
+    grid-template-columns:1fr;
+  }
+
+  .powerful-card {
+    min-height:auto;
+  }
+
+  .learning {
+    grid-template-columns:1fr;
+  }
+
+  .speaker-image-wrap {
+    width:220px;
+    height:220px;
+  }
+
+  .stats {
+    gap:20px;
+  }
+
+  .footer-content {
+    justify-content:center;
+    text-align:center;
+  }
+
 }
 
 @media(prefers-reduced-motion:reduce) {
-  *,*::before,*::after {
+
+  *,
+  *::before,
+  *::after {
     animation:none!important;
     transition:none!important;
     scroll-behavior:auto!important;
   }
-  .reveal { opacity:1;transform:none; }
+
+  .reveal {
+    opacity:1;
+    transform:none;
+  }
+
 }
 
 </style>
 </head>
 
+
 <body>
 
-<!-- NAVIGATION -->
+
+<!-- =========================
+     NAVIGATION
+========================= -->
 
 <header>
+
   <div class="container nav">
 
     <a href="#home" class="logo">SFE<span>.</span></a>
@@ -734,7 +1005,10 @@ footer p {
     </nav>
 
     <div class="nav-actions">
-      <a href="#agenda" class="nav-cta">Session Details</a>
+
+      <a href="#agenda" class="nav-cta">
+        Session Details
+      </a>
 
       <a
         href="https://tally.so/dashboard"
@@ -744,33 +1018,53 @@ footer p {
       >
         Register Now
       </a>
+
     </div>
 
   </div>
+
 </header>
+
 
 <main>
 
-<!-- HERO -->
+
+<!-- =========================
+     HERO
+========================= -->
 
 <section class="hero hero-modern" id="home">
+
   <div class="container reveal hero-content">
 
     <div class="eyebrow">
+
       <span class="eyebrow-dot"></span>
+
       SCIENTIFIC COMMITTEE · AIN SHAMS UNIVERSITY
+
     </div>
 
+
     <h1>
+
       Beyond the Form.<br>
-      <span class="gradient">Build the Experience.</span>
+
+      <span class="gradient">
+        Build the Experience.
+      </span>
+
     </h1>
 
+
     <p class="hero-description">
+
       Discover how to create professional registration forms with Tally and build modern
       landing pages using GitHub Pages — from the first click to a complete registration
       experience.
+
     </p>
+
 
     <div class="hero-buttons">
 
@@ -783,66 +1077,273 @@ footer p {
         Register for the Session ↗
       </a>
 
-      <a href="#about" class="btn btn-outline-pink">
+      <a
+        href="#about"
+        class="btn btn-outline-pink"
+      >
         Explore the Workshop
       </a>
 
     </div>
 
+
     <div class="hero-meta">
+
       <span>◷ Date: To be announced</span>
+
       <span>✦ Ain Shams University</span>
+
       <span>◎ Open to ASU Students</span>
+
     </div>
+
+
+    <!-- HERO FEATURES -->
 
     <div class="hero-feature-grid">
 
       <div class="hero-feature-card">
+
         <div class="feature-icon pink-icon">▢</div>
+
         <h3>Tally Forms</h3>
+
         <p>Build smart registrations</p>
+
       </div>
 
+
       <div class="hero-feature-card">
+
         <div class="feature-icon cyan-icon">&lt;/&gt;</div>
+
         <h3>GitHub Pages</h3>
+
         <p>Publish your landing page</p>
+
       </div>
 
+
       <div class="hero-feature-card">
+
         <div class="feature-icon purple-icon">♢</div>
+
         <h3>Live Demo</h3>
+
         <p>Learn by building</p>
+
       </div>
 
     </div>
 
   </div>
+
 </section>
 
-<!-- ABOUT -->
 
-<section class="dark-section" id="about">
+
+<!-- =========================
+     POWERFUL FEATURES
+========================= -->
+
+<section class="powerful-section" id="powerful-features">
+
   <div class="container reveal">
 
-    <div class="section-label">01 / ABOUT THE SESSION</div>
+    <div class="powerful-header">
+
+      <h2>
+        Powerful <span class="gradient">Features</span>
+      </h2>
+
+      <p>
+        A practical session by the Scientific Committee, Students for Egypt — Ain Shams University.
+        <br>
+        Learn to connect a smart form with a professional landing page.
+      </p>
+
+    </div>
+
+
+    <!-- DATE / TIME / VENUE -->
+
+    <div class="info-grid">
+
+      <div class="info-card">
+
+        <small>DATE</small>
+
+        <h3>To be announced</h3>
+
+        <p>
+          The organizers will share the confirmed session date soon.
+        </p>
+
+      </div>
+
+
+      <div class="info-card">
+
+        <small>TIME & DURATION</small>
+
+        <h3>To be announced</h3>
+
+        <p>
+          Session timing and duration will be announced soon.
+        </p>
+
+      </div>
+
+
+      <div class="info-card">
+
+        <small>VENUE</small>
+
+        <h3>Ain Shams University</h3>
+
+        <p>
+          Exact location or online attendance details to be confirmed.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <!-- SIX FEATURES -->
+
+    <div class="powerful-grid">
+
+
+      <div class="powerful-card">
+
+        <div class="powerful-icon">▤</div>
+
+        <h3>Smart Registration Forms</h3>
+
+        <p>
+          Create organized forms with different question types,
+          required fields, and a smooth submission experience using Tally.
+        </p>
+
+      </div>
+
+
+      <div class="powerful-card">
+
+        <div class="powerful-icon">▱</div>
+
+        <h3>Modern Landing Pages</h3>
+
+        <p>
+          Understand the structure of a landing page and build a clear,
+          attractive page for your event or activity.
+        </p>
+
+      </div>
+
+
+      <div class="powerful-card">
+
+        <div class="powerful-icon">&lt;/&gt;</div>
+
+        <h3>GitHub Pages</h3>
+
+        <p>
+          Publish your website online and share it through a live link
+          — without needing paid hosting.
+        </p>
+
+      </div>
+
+
+      <div class="powerful-card">
+
+        <div class="powerful-icon">▤</div>
+
+        <h3>Form Integration</h3>
+
+        <p>
+          Connect your Tally form to your landing page so visitors
+          can register without friction.
+        </p>
+
+      </div>
+
+
+      <div class="powerful-card">
+
+        <div class="powerful-icon">⊕</div>
+
+        <h3>Design & Customization</h3>
+
+        <p>
+          Explore layouts, colors, responsive design, and small details
+          that make a page feel professional.
+        </p>
+
+      </div>
+
+
+      <div class="powerful-card">
+
+        <div class="powerful-icon">⌁</div>
+
+        <h3>Practical Walkthrough</h3>
+
+        <p>
+          Follow the process step by step and see how the form
+          and landing page work together.
+        </p>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section class="dark-section" id="about">
+
+  <div class="container reveal">
+
+    <div class="section-label">
+      01 / ABOUT THE SESSION
+    </div>
 
     <h2 class="section-title">
+
       More Than Just <span class="gradient">A Form.</span>
+
     </h2>
 
     <p class="section-desc">
+
       A practical session designed for Ain Shams University
       students to explore digital registration systems,
       build professional landing pages, and publish their
       own websites.
+
     </p>
+
 
     <div class="cards">
 
+
       <div class="card">
+
         <div class="card-icon">▤</div>
+
         <h3>Registration Forms</h3>
+
         <p>
           Create organized registration forms using Tally,
           customize questions, and collect responses.
@@ -855,20 +1356,30 @@ footer p {
         >
           Explore Tally ↗
         </a>
+
       </div>
 
+
       <div class="card">
+
         <div class="card-icon">⌘</div>
+
         <h3>Landing Page Design</h3>
+
         <p>
           Understand website structure and learn how to
           create modern landing pages for events.
         </p>
+
       </div>
 
+
       <div class="card">
+
         <div class="card-icon">⌁</div>
+
         <h3>Website Publishing</h3>
+
         <p>
           Upload your HTML files and publish your website
           online using GitHub Pages.
@@ -881,143 +1392,265 @@ footer p {
         >
           Explore GitHub ↗
         </a>
+
       </div>
+
 
     </div>
 
   </div>
+
 </section>
 
-<!-- LEARNING -->
+
+
+<!-- =========================
+     LEARNING OUTCOMES
+========================= -->
 
 <section id="learning">
+
   <div class="container reveal">
 
-    <div class="section-label">02 / WHAT YOU'LL LEARN</div>
+    <div class="section-label">
+      02 / WHAT YOU'LL LEARN
+    </div>
 
     <h2 class="section-title">
+
       Build Skills.<br>
-      <span class="gradient">Create Experiences.</span>
+
+      <span class="gradient">
+        Create Experiences.
+      </span>
+
     </h2>
 
     <p class="section-desc">
+
       Practical skills you can apply to your next event,
       activity, or personal project.
+
     </p>
+
 
     <div class="learning">
 
+
       <div class="learning-item">
+
         <div class="number">01</div>
+
         <div>
+
           <h3>Tally Registration Forms</h3>
-          <p>Create professional forms and organize registration data.</p>
+
+          <p>
+            Create professional forms and organize registration data.
+          </p>
+
         </div>
+
       </div>
 
+
       <div class="learning-item">
+
         <div class="number">02</div>
+
         <div>
+
           <h3>Landing Page Structure</h3>
-          <p>Understand the essential sections of a successful landing page.</p>
+
+          <p>
+            Understand the essential sections of a successful landing page.
+          </p>
+
         </div>
+
       </div>
 
+
       <div class="learning-item">
+
         <div class="number">03</div>
+
         <div>
+
           <h3>HTML & CSS</h3>
-          <p>Learn the basic technologies behind website design.</p>
+
+          <p>
+            Learn the basic technologies behind website design.
+          </p>
+
         </div>
+
       </div>
 
+
       <div class="learning-item">
+
         <div class="number">04</div>
+
         <div>
+
           <h3>GitHub Pages</h3>
-          <p>Publish your website and share it with the world.</p>
+
+          <p>
+            Publish your website and share it with the world.
+          </p>
+
         </div>
+
       </div>
+
 
     </div>
 
   </div>
+
 </section>
 
-<!-- AGENDA -->
+
+
+<!-- =========================
+     AGENDA
+========================= -->
 
 <section class="dark-section" id="agenda">
+
   <div class="container reveal">
 
-    <div class="section-label">03 / SESSION ROADMAP</div>
+    <div class="section-label">
+      03 / SESSION ROADMAP
+    </div>
 
     <h2 class="section-title">
+
       Inside The <span class="gradient">Session.</span>
+
     </h2>
+
 
     <div class="agenda">
 
+
       <div class="agenda-item">
+
         <div class="agenda-number">01</div>
+
         <div>
+
           <h3>Introduction to Registration Systems</h3>
-          <p>Understand the role of digital forms in organizing events.</p>
+
+          <p>
+            Understand the role of digital forms in organizing events.
+          </p>
+
         </div>
+
       </div>
 
+
       <div class="agenda-item">
+
         <div class="agenda-number">02</div>
+
         <div>
+
           <h3>Building Forms with Tally</h3>
-          <p>Create questions, customize fields, and manage responses.</p>
+
+          <p>
+            Create questions, customize fields, and manage responses.
+          </p>
+
         </div>
+
       </div>
 
+
       <div class="agenda-item">
+
         <div class="agenda-number">03</div>
+
         <div>
+
           <h3>Landing Page Development</h3>
-          <p>Build a professional website using HTML and CSS.</p>
+
+          <p>
+            Build a professional website using HTML and CSS.
+          </p>
+
         </div>
+
       </div>
 
+
       <div class="agenda-item">
+
         <div class="agenda-number">04</div>
+
         <div>
+
           <h3>Publishing with GitHub Pages</h3>
-          <p>Upload files and make your website available online.</p>
+
+          <p>
+            Upload files and make your website available online.
+          </p>
+
         </div>
+
       </div>
 
+
       <div class="agenda-item">
+
         <div class="agenda-number">05</div>
+
         <div>
+
           <h3>Connecting Everything</h3>
-          <p>Connect your Tally form to your landing page.</p>
+
+          <p>
+            Connect your Tally form to your landing page.
+          </p>
+
         </div>
+
       </div>
+
 
     </div>
 
   </div>
+
 </section>
 
-<!-- SPEAKER -->
+
+
+<!-- =========================
+     SPEAKER
+========================= -->
 
 <section class="speaker-section" id="speaker">
+
   <div class="container reveal">
 
-    <div class="section-label">04 / MEET YOUR SPEAKER</div>
+    <div class="section-label">
+      04 / MEET YOUR SPEAKER
+    </div>
 
     <h2 class="section-title">
+
       Learn From <span class="gradient">Experience.</span>
+
     </h2>
+
 
     <div class="speaker-layout">
 
-      <div class="speaker-image-wrap">
 
-        <!-- KEEP YOUR IMAGE NAME: speaker.jpg -->
+      <div class="speaker-image-wrap">
 
         <img
           src="./speaker.jpg"
@@ -1028,6 +1661,7 @@ footer p {
 
       </div>
 
+
       <div class="speaker-info">
 
         <h3>Mo’men Khaled</h3>
@@ -1037,17 +1671,25 @@ footer p {
         </div>
 
         <p>
+
           Join Mo’men Khaled in a practical learning experience
           about creating professional registration forms,
           designing landing pages, and publishing websites
           using modern digital tools.
+
         </p>
 
+
         <div class="tags">
+
           <span>Tally</span>
+
           <span>HTML & CSS</span>
+
           <span>GitHub Pages</span>
+
           <span>Web Design</span>
+
         </div>
 
       </div>
@@ -1055,86 +1697,146 @@ footer p {
     </div>
 
   </div>
+
 </section>
 
-<!-- FAQ -->
+
+
+<!-- =========================
+     FAQ
+========================= -->
 
 <section class="dark-section" id="faq">
+
   <div class="container reveal">
 
-    <div class="section-label">05 / FAQ</div>
+    <div class="section-label">
+      05 / FAQ
+    </div>
 
     <h2 class="section-title">
+
       Frequently Asked <span class="gradient">Questions.</span>
+
     </h2>
+
 
     <div class="faq-list">
 
+
       <div class="faq-item">
+
         <button class="faq-question">
+
           Do I need coding experience?
+
           <span>+</span>
+
         </button>
+
         <div class="faq-answer">
+
           No. The session is beginner-friendly and introduces
           the concepts step by step.
+
         </div>
+
       </div>
 
+
       <div class="faq-item">
+
         <button class="faq-question">
+
           Who can attend?
+
           <span>+</span>
+
         </button>
+
         <div class="faq-answer">
+
           Students of Ain Shams University interested in
           digital tools and website development.
+
         </div>
+
       </div>
 
+
       <div class="faq-item">
+
         <button class="faq-question">
+
           What should I bring?
+
           <span>+</span>
+
         </button>
+
         <div class="faq-answer">
+
           Bring your laptop if possible and make sure
           you have internet access.
+
         </div>
+
       </div>
 
+
       <div class="faq-item">
+
         <button class="faq-question">
+
           Will we build a real project?
+
           <span>+</span>
+
         </button>
+
         <div class="faq-answer">
+
           Yes. The session focuses on practical steps
           to create forms and publish a landing page.
+
         </div>
+
       </div>
+
 
     </div>
 
   </div>
+
 </section>
 
-<!-- REGISTER -->
+
+
+<!-- =========================
+     REGISTRATION
+========================= -->
 
 <section id="register">
+
   <div class="container">
 
     <div class="cta reveal">
 
-      <div class="section-label">06 / JOIN THE EXPERIENCE</div>
+      <div class="section-label">
+        06 / JOIN THE EXPERIENCE
+      </div>
 
       <h2>
+
         Ready To Go <span class="gradient">Beyond?</span>
+
       </h2>
 
       <p>
+
         Learn how to turn a simple registration form into
         a complete digital experience.
+
       </p>
 
       <a
@@ -1143,26 +1845,45 @@ footer p {
         rel="noopener noreferrer"
         class="btn btn-primary"
       >
-        Explore Tally ↗
+        Register Now ↗
       </a>
 
     </div>
 
   </div>
+
 </section>
+
 
 </main>
 
-<!-- FOOTER -->
+
+
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
+
   <div class="container footer-content">
 
+
     <div>
-      <a href="#home" class="logo">SFE<span>.</span></a>
-      <p>Scientific Committee – Students for Egypt</p>
-      <p>Ain Shams University</p>
+
+      <a href="#home" class="logo">
+        SFE<span>.</span>
+      </a>
+
+      <p>
+        Scientific Committee – Students for Egypt
+      </p>
+
+      <p>
+        Ain Shams University
+      </p>
+
     </div>
+
 
     <div class="footer-links">
 
@@ -1182,51 +1903,88 @@ footer p {
         GitHub
       </a>
 
-      <a href="#home">Back to Top ↑</a>
+      <a href="#home">
+        Back to Top ↑
+      </a>
 
     </div>
 
-    <p>© 2026 Beyond The Form.</p>
+
+    <p>
+      © 2026 Beyond The Form.
+    </p>
+
 
   </div>
+
 </footer>
+
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
 
 <script>
 
-// FAQ accordion
+/* FAQ ACCORDION */
 
 document.querySelectorAll(".faq-question").forEach(button => {
+
   button.addEventListener("click", () => {
 
     const item = button.parentElement;
+
     const wasActive = item.classList.contains("active");
 
     document.querySelectorAll(".faq-item").forEach(faq => {
+
       faq.classList.remove("active");
+
       faq.querySelector(".faq-question span").textContent = "+";
+
     });
 
     if (!wasActive) {
+
       item.classList.add("active");
+
       button.querySelector("span").textContent = "−";
+
     }
 
   });
+
 });
 
-// Scroll reveal animation
+
+/* SCROLL REVEAL ANIMATION */
 
 const observer = new IntersectionObserver(entries => {
+
   entries.forEach(entry => {
+
     if (entry.isIntersecting) {
+
       entry.target.classList.add("visible");
+
       observer.unobserve(entry.target);
+
     }
+
   });
-}, { threshold:0.12 });
+
+}, {
+
+  threshold:0.12
+
+});
+
 
 document.querySelectorAll(".reveal").forEach(element => {
+
   observer.observe(element);
+
 });
 
 </script>
