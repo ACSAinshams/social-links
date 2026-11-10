@@ -1,11 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#17132f">
-<title>Beyond the Form | Ain Shams University</title>
+<title>Beyond the Form | SFE · Ain Shams University</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -75,8 +74,9 @@ header {
 }
 
 .logo {
-  font-size:21px;
+  font-size:30px;
   font-weight:900;
+  letter-spacing:-1.5px;
 }
 
 .logo span { color:var(--cyan); }
@@ -89,15 +89,6 @@ header {
 }
 
 .nav-links a:hover { color:var(--cyan); }
-
-.nav-cta {
-  padding:10px 18px;
-  border:1px solid var(--cyan);
-  border-radius:30px;
-  color:var(--cyan);
-  font-size:13px;
-  font-weight:700;
-}
 
 /* BUTTONS */
 
@@ -187,6 +178,163 @@ header {
 .stats small {
   color:var(--muted);
   font-size:11px;
+}
+
+/* HERO DESIGN */
+
+.nav { gap:24px; }
+
+.nav-actions {
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+
+.nav-cta {
+  padding:10px 20px;
+  border:1px solid var(--pink);
+  border-radius:9px;
+  color:#f34be9;
+  font-size:13px;
+  font-weight:700;
+}
+
+.nav-register {
+  display:inline-block;
+  padding:13px 22px;
+  border-radius:9px;
+  color:#15132c;
+  background:var(--cyan);
+  font-size:13px;
+  font-weight:800;
+  transition:.3s;
+}
+
+.nav-register:hover {
+  transform:translateY(-3px);
+  box-shadow:0 8px 25px #08e8f344;
+}
+
+.hero-modern {
+  min-height:calc(100vh - 75px);
+  padding:70px 0 45px;
+  text-align:center;
+  justify-content:center;
+  background:
+    radial-gradient(ellipse at 15% 42%,rgba(237,0,232,.16),transparent 38%),
+    radial-gradient(ellipse at 88% 48%,rgba(8,232,243,.15),transparent 40%),
+    linear-gradient(115deg,#17132f 0%,#211a43 55%,#30265d 100%);
+}
+
+.hero-content { width:min(1120px,90%); }
+
+.hero-modern .eyebrow {
+  margin-bottom:34px;
+  padding:9px 18px;
+  border-color:#08e8f355;
+  color:#a8f6ff;
+  letter-spacing:1.4px;
+}
+
+.eyebrow-dot {
+  display:inline-block;
+  width:7px;
+  height:7px;
+  margin:0 9px 1px 0;
+  border-radius:50%;
+  background:var(--cyan);
+  box-shadow:0 0 12px var(--cyan);
+}
+
+.hero-modern h1 {
+  max-width:1000px;
+  margin:0 auto 20px;
+  font-size:clamp(43px,6.2vw,82px);
+  line-height:1.08;
+  letter-spacing:-3px;
+  font-weight:900;
+}
+
+.hero-modern .gradient {
+  background:linear-gradient(95deg,#d8ffff 0%,#82efff 38%,#e85be9 100%);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+
+.hero-description {
+  max-width:790px;
+  margin:0 auto;
+  color:#d0cde1;
+  font-size:clamp(15px,1.5vw,20px);
+  line-height:1.75;
+}
+
+.hero-modern .hero-buttons {
+  justify-content:center;
+  margin-top:30px;
+}
+
+.btn-outline-pink {
+  border:1px solid var(--pink);
+  color:#f34be9;
+  background:rgba(23,19,47,.35);
+}
+
+.hero-meta {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:28px;
+  margin-top:27px;
+  color:#b8b3d0;
+  font-size:12px;
+}
+
+.hero-feature-grid {
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:22px;
+  width:min(840px,100%);
+  margin:82px auto 0;
+}
+
+.hero-feature-card {
+  min-height:158px;
+  padding:23px 18px;
+  border:1px solid rgba(255,255,255,.10);
+  border-radius:16px;
+  background:rgba(255,255,255,.065);
+  backdrop-filter:blur(10px);
+  transition:.3s;
+}
+
+.hero-feature-card:hover {
+  transform:translateY(-7px);
+  border-color:rgba(8,232,243,.5);
+  background:rgba(255,255,255,.09);
+}
+
+.feature-icon {
+  margin-bottom:12px;
+  font-size:36px;
+  line-height:1.2;
+  font-weight:800;
+  text-shadow:0 0 20px currentColor;
+}
+
+.pink-icon { color:#ed00e8; }
+.cyan-icon { color:#08e8f3; }
+.purple-icon { color:#b66aff; }
+
+.hero-feature-card h3 {
+  margin-bottom:5px;
+  font-size:15px;
+}
+
+.hero-feature-card p {
+  color:#b8b3d0;
+  font-size:12px;
 }
 
 /* SECTIONS */
@@ -529,14 +677,27 @@ footer p {
 
 @media(max-width:800px) {
   .nav-links { display:none; }
+  .nav-actions { gap:8px; }
+  .nav-cta { display:none; }
   .cards { grid-template-columns:1fr; }
   .speaker-layout { grid-template-columns:1fr; text-align:center; }
   .tags { justify-content:center; }
+  .hero-feature-grid { margin-top:55px; }
 }
 
 @media(max-width:600px) {
   section { padding:70px 0; }
-  .hero { min-height:auto; }
+  .logo { font-size:27px; }
+  .nav-register { padding:10px 13px; font-size:11px; }
+  .hero-modern { min-height:auto; padding:65px 0 55px; }
+  .hero-modern h1 { letter-spacing:-1.8px; }
+  .hero-meta { gap:12px 18px; }
+  .hero-feature-grid {
+    grid-template-columns:1fr;
+    gap:12px;
+    margin-top:45px;
+  }
+  .hero-feature-card { min-height:130px; }
   .learning { grid-template-columns:1fr; }
   .speaker-image-wrap { width:220px;height:220px; }
   .stats { gap:20px; }
@@ -561,17 +722,30 @@ footer p {
 
 <header>
   <div class="container nav">
-    <a href="#home" class="logo">BEYOND<span>.</span>FORM</a>
+
+    <a href="#home" class="logo">SFE<span>.</span></a>
 
     <nav class="nav-links">
       <a href="#about">About</a>
-      <a href="#learning">Learning</a>
       <a href="#agenda">Agenda</a>
+      <a href="#learning">Outcomes</a>
       <a href="#speaker">Speaker</a>
       <a href="#faq">FAQ</a>
     </nav>
 
-    <a href="#register" class="nav-cta">Explore Session ↗</a>
+    <div class="nav-actions">
+      <a href="#agenda" class="nav-cta">Session Details</a>
+
+      <a
+        href="https://tally.so/dashboard"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="nav-register"
+      >
+        Register Now
+      </a>
+    </div>
+
   </div>
 </header>
 
@@ -579,43 +753,68 @@ footer p {
 
 <!-- HERO -->
 
-<section class="hero" id="home">
-  <div class="container reveal">
+<section class="hero hero-modern" id="home">
+  <div class="container reveal hero-content">
 
     <div class="eyebrow">
+      <span class="eyebrow-dot"></span>
       SCIENTIFIC COMMITTEE · AIN SHAMS UNIVERSITY
     </div>
 
     <h1>
-      BEYOND THE<br>
-      <span class="gradient">FORM.</span>
+      Beyond the Form.<br>
+      <span class="gradient">Build the Experience.</span>
     </h1>
 
-    <p>
-      Turn your ideas into real digital experiences.
-      Learn how to create professional registration forms
-      using Tally and build modern landing pages using
-      GitHub Pages.
+    <p class="hero-description">
+      Discover how to create professional registration forms with Tally and build modern
+      landing pages using GitHub Pages — from the first click to a complete registration
+      experience.
     </p>
 
     <div class="hero-buttons">
-      <a href="#register" class="btn btn-primary">Explore the Session ↗</a>
-      <a href="#about" class="btn btn-secondary">Discover More ↓</a>
+
+      <a
+        href="https://tally.so/dashboard"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn btn-primary"
+      >
+        Register for the Session ↗
+      </a>
+
+      <a href="#about" class="btn btn-outline-pink">
+        Explore the Workshop
+      </a>
+
     </div>
 
-    <div class="stats">
-      <div>
-        <strong>Practical</strong>
-        <small>Hands-on Learning</small>
+    <div class="hero-meta">
+      <span>◷ Date: To be announced</span>
+      <span>✦ Ain Shams University</span>
+      <span>◎ Open to ASU Students</span>
+    </div>
+
+    <div class="hero-feature-grid">
+
+      <div class="hero-feature-card">
+        <div class="feature-icon pink-icon">▢</div>
+        <h3>Tally Forms</h3>
+        <p>Build smart registrations</p>
       </div>
-      <div>
-        <strong>Beginner Friendly</strong>
-        <small>All Skill Levels</small>
+
+      <div class="hero-feature-card">
+        <div class="feature-icon cyan-icon">&lt;/&gt;</div>
+        <h3>GitHub Pages</h3>
+        <p>Publish your landing page</p>
       </div>
-      <div>
-        <strong>Digital</strong>
-        <small>Build & Publish</small>
+
+      <div class="hero-feature-card">
+        <div class="feature-icon purple-icon">♢</div>
+        <h3>Live Demo</h3>
+        <p>Learn by building</p>
       </div>
+
     </div>
 
   </div>
@@ -648,7 +847,14 @@ footer p {
           Create organized registration forms using Tally,
           customize questions, and collect responses.
         </p>
-        <a href="https://tally.so/" target="_blank">Explore Tally ↗</a>
+
+        <a
+          href="https://tally.so/dashboard"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Explore Tally ↗
+        </a>
       </div>
 
       <div class="card">
@@ -667,7 +873,14 @@ footer p {
           Upload your HTML files and publish your website
           online using GitHub Pages.
         </p>
-        <a href="https://github.com/" target="_blank">Explore GitHub ↗</a>
+
+        <a
+          href="https://github.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Explore GitHub ↗
+        </a>
       </div>
 
     </div>
@@ -804,7 +1017,8 @@ footer p {
 
       <div class="speaker-image-wrap">
 
-        <!-- IMAGE FILE: speaker.jpg -->
+        <!-- KEEP YOUR IMAGE NAME: speaker.jpg -->
+
         <img
           src="./speaker.jpg"
           alt="Mo'men Khaled - Session Speaker"
@@ -924,7 +1138,7 @@ footer p {
       </p>
 
       <a
-        href="https://tally.so/"
+        href="https://tally.so/dashboard"
         target="_blank"
         rel="noopener noreferrer"
         class="btn btn-primary"
@@ -945,15 +1159,31 @@ footer p {
   <div class="container footer-content">
 
     <div>
-      <a href="#home" class="logo">BEYOND<span>.</span>FORM</a>
+      <a href="#home" class="logo">SFE<span>.</span></a>
       <p>Scientific Committee – Students for Egypt</p>
       <p>Ain Shams University</p>
     </div>
 
     <div class="footer-links">
-      <a href="https://tally.so/" target="_blank">Tally</a>
-      <a href="https://github.com/" target="_blank">GitHub</a>
+
+      <a
+        href="https://tally.so/dashboard"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Tally
+      </a>
+
+      <a
+        href="https://github.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        GitHub
+      </a>
+
       <a href="#home">Back to Top ↑</a>
+
     </div>
 
     <p>© 2026 Beyond The Form.</p>
